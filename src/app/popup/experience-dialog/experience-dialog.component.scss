@@ -1,0 +1,14 @@
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  margin-left: auto;
+  color: #888;
+}
+
+.close-button:hover {
+  color: #000;
+}

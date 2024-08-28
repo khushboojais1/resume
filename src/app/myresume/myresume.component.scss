@@ -1,0 +1,263 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.resume {
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+}
+
+header {
+  background: linear-gradient(45deg, #004d7a, #008793);
+  color: #fff;
+  padding: 40px 20px;
+  grid-column: span 2;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  max-width: 120px;
+  margin-right: 20px;
+  border: 5px solid #fff;
+}
+h1{
+  font-family: inherit;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #f2f2f2;
+}
+.profile-info h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.profile-info h2 {
+  font-size: 24px;
+  margin: 5px 0;
+  color: #f4f7fc;
+}
+
+.profile-info p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.profile-info a {
+  color: #f4f7fc;
+  text-decoration: none;
+}
+
+.profile-info a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 20px 40px;
+}
+
+h3 {
+  border-bottom: 2px solid #004d7a;
+  padding-bottom: 5px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #004d7a;
+}
+
+.job-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 20px;
+  margin: 0;
+  width: 630px;
+}
+
+.company {
+  font-size: 16px;
+  color: #888;
+}
+
+.dates {
+  font-size: 16px;
+  color: #888;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill-name {
+  font-size: 18px;
+  color: #004d7a;
+}
+
+.skill-rating {
+  width: 50%;
+  background-color: #e0e0e0;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rating-bar {
+  height: 100%;
+  background-color: #008793;
+  border-radius: 4px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .resume {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-picture img {
+    margin-bottom: 20px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+.references {
+  padding: 20px;
+  background-color: #f8f8f8;
+    border-radius: 8px;
+  margin-top: 20px;
+}
+
+.references h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.reference-item {
+  margin-bottom: 15px;
+}
+
+.reference-item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.reference-item strong {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-top: 10px;
+}
+.education-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.education-table th, .education-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.education-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.education-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.education-table tr:hover {
+  background-color: #ddd;
+}
+.job-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  margin-left: 8px;
+  font-size: 18px;
+  color: #004d7a; /* Adjust color as needed */
+}
+.contact-form {
+  text-align: center; /* Center the button */
+  margin-top: 20px;
+}
+
+.contact-button {
+  background-color: #007bff; /* Button background color */
+  color: #ffffff; /* Button text color */
+  font-size: 18px; /* Button font size */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: blockS;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}
+
+.arrow-icon {
+  margin-left: 8px; /* Space between text and arrow */
+  font-size: 20px; /* Arrow size */
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-button:hover .arrow-icon {
+  transform: translateX(5px); /* Move the arrow slightly on hover */
+}

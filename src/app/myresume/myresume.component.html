@@ -1,0 +1,141 @@
+<div class="container">
+  <div id="resumeContent" class="resume">
+    <header>
+      <div class="profile-header">
+        <div class="profile-picture">
+          <img [src]="imageUrl" alt="{{ name }}" />
+        </div>
+        <div class="profile-info">
+          <h1>{{ name }}</h1>
+          <h2>{{ jobTitle }}</h2>
+          <p>Email: {{ contactInfo.email }}</p>
+          <p>Phone: {{ contactInfo.phone }}</p>
+          <p>
+            LinkedIn:
+            <a [href]="contactInfo.linkedIn" target="_blank">{{ contactInfo.linkedIn }}</a>
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="experience">
+        <h3>Experience</h3>
+        <div *ngFor="let job of jobs" class="job-item">
+          <h4 (click)="openDialog(job)">
+            {{ job.title }} at {{ job.company }}
+            <span class="arrow-icon">&#x2192;</span>
+         </h4>
+        </div>
+        <div *ngFor="let experience of experiences">
+          <span class="dates">{{ experience.dates }}</span>
+          <p>{{ experience.description }}</p>
+        </div>
+      </section>
+
+
+      <section class="education">
+        <h3>Education</h3>
+        <table class="education-table">
+          <thead>
+            <tr>
+              <th>Degree</th>
+              <th>Institution</th>
+              <th>Graduation Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let edu of education">
+              <td>{{ edu.degree }}</td>
+              <td>{{ edu.institution }}</td>
+              <td>{{ edu.graduationDate }}</td>
+            </tr>
+            <tr *ngFor="let edu of hieghschool">
+              <td>{{ edu.degree }}</td>
+              <td>{{ edu.institution }}</td>
+              <td>{{ edu.graduationDate }}</td>
+            </tr>
+            <tr *ngFor="let edu of enterclass">
+              <td>{{ edu.degree }}</td>
+              <td>{{ edu.institution }}</td>
+              <td>{{ edu.graduationDate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+
+      <section class="skills">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+          <div *ngFor="let skill of skills" class="skill">
+            <div class="skill-name">{{ skill.name }}</div>
+            <div class="skill-rating">
+              <div
+                class="rating-bar"
+                [style.width.%]="skill.rating * 20"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hobbies">
+        <h3 (click)="toggleHobbies()">Hobbies</h3>
+        <div *ngIf="showHobbies">
+          <p>Reading, Traveling, Coding</p>
+        </div>
+      </section>
+
+      <section class="references">
+        <h3>References</h3>
+        <div class="reference-item">
+          <p>"Khushboo has been an outstanding team player with exceptional skills in front-end development. Her contributions have always been of the highest quality."</p>
+          <p><strong>- Ramesh Jaiswar, Project Manager at Neotech IT Services</strong></p>
+        </div>
+        <div class="reference-item">
+          <p>"Her expertise in Angular and her ability to tackle complex problems make her a valuable asset to any team."</p>
+          <p><strong>- Sharib Fazal, Senior Developer at Neotech IT Services</strong></p>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section class="portfolio">
+        <h3>Portfolio</h3>
+        <div *ngFor="let project of portfolio">
+          <h4>{{ project.title }}</h4>
+          <p>{{ project.description }}</p>
+          <a [href]="project.link" target="_blank">View Project</a>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="timeline">
+        <h3>Timeline</h3>
+        <div *ngFor="let event of timeline">
+          <div class="timeline-item">
+            <span class="date">{{ event.date }}</span>
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </section>
+      <section class="contact-form">
+        <button (click)="openContact(contact)" class="contact-button" style="display: block;">
+          Contact Me <span class="arrow-icon">&#x2192;</span>
+        </button>
+      </section>
+<br>
+      <div class="button d-flex justify-content-center">
+        <button (click)="onClickDownloadPdf()" style="background-color: #0d41ed;
+           width: 170px;
+           line-height: 37px;
+        border-radius: 6px;
+        color: white;
+        font-weight: 900;
+        border: antiquewhite;
+    ">Download PDF</button>
+      </div>
+
+    </div>
+  </div>
+</div>

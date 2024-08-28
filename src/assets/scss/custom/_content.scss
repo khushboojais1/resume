@@ -1,0 +1,51 @@
+@use "sass:math";
+
+.main-content {
+    position: relative;
+    // background-image: url('../../img/brand/flag1.jpg');
+
+    // Navbar
+    .navbar-top {
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        background-color: #ff8e05;       
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 5px;
+        padding-bottom: 0px;
+        
+    }
+
+    // Container
+    .container-fluid {
+        // padding-left: 96px !important;
+        // padding-right: 80px !important;
+        margin-top: 11px; 
+    }
+}
+
+
+// Offsets the main content depending on the sidebar positioning
+
+.navbar-vertical.navbar-expand {
+
+    @each $breakpoint,
+    $dimension in $grid-breakpoints {
+
+        &-#{$breakpoint} {
+
+            @include media-breakpoint-up(#{$breakpoint}) {
+
+                // Left
+                &.fixed-left + .main-content {
+                    margin-left: $navbar-vertical-width;
+                } // Right
+                &.fixed-right + .main-content {
+                    margin-right: $navbar-vertical-width;
+                }
+            }
+        }
+    }
+}
